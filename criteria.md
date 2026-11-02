@@ -53,61 +53,72 @@ whether you hit them:
 
 ## 1.
 
-<!-- Your criterion. It must name a number. -->
-
-
+The model must achieve at least 75% accuracy on the held-out test
+set for each of the three evaluation seeds: 42, 7, and 2024.
 
 **Why this target:**
 
-
+I chose 75% because correctly sorting three out of four Beatles
+posts would make the classifier useful to me. I expect some
+mistakes because a post can mix questions, facts, and opinions.
 
 ---
 
 ## 2.
 
-<!-- Your criterion. -->
-
-
+No label may account for more than 70% of the full labeled dataset.
 
 **Why this target:**
 
-
+Many posts I read ask questions without expressing an opinion,
+which could make `other` dominate my dataset. This limit helps
+keep the classifier from relying too heavily on one category.
 
 ---
 
 ## 3.
 
-<!-- Your criterion. -->
-
-
+Each of the three labels must achieve an F1 score of at least
+0.60 on the held-out test set for each evaluation seed:
+42, 7, and 2024.
 
 **Why this target:**
 
-
+The classifier needs to recognize all three categories, not just
+the most common one. I chose 0.60 because the boundary between
+stated and explained opinions can be difficult, and a small test
+set can make the scores vary between seeds.
 
 ---
 
 ## 4.
 
-<!-- Your criterion. -->
-
-
+When I independently relabel the same 20 cold examples, I must
+agree with at least 16 of my original labels, or 80%. During the
+second pass, I will use my written definitions without viewing
+the original labels or using AI. I will compare the labels only
+after completing the pass.
 
 **Why this target:**
 
-
+Our practice exercise showed that questions and negative opinions
+can be confusing. I want to check whether my clarified rules help
+me label those cases consistently. This target allows up to four
+disagreements before I would consider my consistency too low.
 
 ---
 
 ## 5.
 
-<!-- Your criterion. -->
-
-
+Recall for `explained_opinion` must be at least 0.70 on the
+held-out test set for each evaluation seed: 42, 7, and 2024.
 
 **Why this target:**
 
-
+The main distinction I chose is whether writers support their
+opinions with specific reasons. I want the classifier to find
+at least 70% of the genuinely explained opinions rather than
+mistaking them for unsupported opinions or factual posts.
 
 ---
 
