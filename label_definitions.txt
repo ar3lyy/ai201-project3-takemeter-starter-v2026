@@ -1,10 +1,49 @@
-# Your label definitions, one per line, as `label: definition`.
-#
-# Copy these from your README so the baseline is judged on exactly the
-# definitions you wrote. baseline.py reads this file.
-#
-# Delete the examples below and put yours in.
+Community: r/TheBeatles
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+These labels describe how a post expresses an opinion, not whether
+the opinion is correct or whether I agree with it.
+
+explained_opinion:
+The writer expresses an opinion about the Beatles or their music
+and supports it with a specific feature, example, or personal
+experience that explains the opinion.
+
+stated_opinion:
+The writer expresses an opinion about the Beatles or their music
+but does not give a specific supporting explanation.
+
+other:
+The writer does not express their own opinion, such as a post
+that only asks a question or shares factual information.
+
+Decision rules:
+1. Read the full title and body together.
+2. If there is no opinion from the writer, choose other.
+3. If there is an opinion with a specific supporting explanation,
+   choose explained_opinion.
+4. If there is an opinion without that support, choose stated_opinion.
+5. General praise or criticism, such as "amazing," "beautiful,"
+   "the best," or "terrible," is not a supporting explanation.
+6. Mentioning vocals, instruments, or lyrics is not enough by itself.
+   The writer must explain what about them supports the opinion.
+7. A fact must help explain the opinion. An unrelated date or
+   song title does not make an opinion explained.
+8. Starting with a question does not automatically make a post other.
+   Check whether the writer also expresses and supports an opinion.
+9. If a post contains several opinions, choose explained_opinion
+   when at least one has a specific supporting explanation.
+10. Opinions include both praise and criticism. Describing a song
+    as too long or saying it loses the writer's interest counts
+    as a judgment.
+11. Questions such as "Who else thinks..." can express the
+    writer's own opinion. A question mark does not determine the label.
+12. A factual statement or question alongside an unsupported
+    opinion does not change it to other.
+
+Hardest boundary:
+explained_opinion versus stated_opinion.
+
+Boundary rule:
+Choose explained_opinion only when a specific detail explains
+why the writer holds an opinion. The word "because" alone does
+not count as an explanation.

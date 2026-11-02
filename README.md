@@ -46,39 +46,95 @@
 
 ## Label Taxonomy
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
+These labels describe how writers express their opinions, not whether their opinions are correct or whether I agree with them. I read the title and body together.
 
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
+### `explained_opinion`
 
-### `label_one`
-
-**Definition:**
+**Definition:** The writer expresses an opinion about the Beatles or their music and supports it with a specific feature, example, or personal experience that explains the opinion.
 
 **Example 1:**
->
+> "Their early records may not be as adventurous and impressive as the studio work that followed, but there's much more happening than 'jingle rock and roll.' You can already hear sophisticated vocal arrangements, tight ensemble playing, and an impressive ability to transform American rock & roll, R&B, Motown, and pop standards into something distinctly their own."
+
+Source: [Early Beatles... Overlooked and Under appreciated](https://www.reddit.com/r/TheBeatles/comments/1vcw3uk/early_beatles_overlooked_and_under_appreciated/)
+
+This supports the writer's appreciation of their early recordings with details about the vocal arrangements, ensemble playing, and approach to covers.
 
 **Example 2:**
->
+> "I'll go first as always, Fixing a Hole is a song with incredible musical structure that paints what the lyrics are describing in such a perfect way, and was generally misunderstood."
 
-### `label_two`
+Source: [What's the Most Underrated Beatles Song?](https://www.reddit.com/r/TheBeatles/comments/1ok1gdr/whats_the_most_underrated_beatles_song/)
 
-**Definition:**
+The writer explains their praise by connecting the song's musical structure to what the lyrics describe.
+
+### `stated_opinion`
+
+**Definition:** The writer expresses an opinion about the Beatles or their music without giving a specific supporting explanation.
 
 **Example 1:**
->
+> "I like the Beatles"
+
+Source: [I like the Beatles](https://www.reddit.com/r/TheBeatles/comments/1vs8q5z/i_like_the_beatles/)
+
+The writer expresses a preference without explaining why.
 
 **Example 2:**
+> Title: Would ‘Imagine’ have been good for The Beatles
 >
+> Body: I think yes
+
+Source: [Would ‘Imagine’ have been good for The Beatles](https://www.reddit.com/r/TheBeatles/comments/1x63z8u/would_imagine_have_been_good_for_the_beatles/)
+
+The writer answers their own question with an opinion but gives no supporting reason.
+
+### `other`
+
+**Definition:** The writer does not express their own opinion, such as a post that only asks a question or shares factual information.
+
+**Example 1:**
+> "Which album got you into The Beatles?"
+
+Source: [Which album got you into The Beatles?](https://www.reddit.com/r/TheBeatles/comments/1ww3srf/which_album_got_you_into_the_beatles/)
+
+This asks about other people's experiences without giving the writer's own judgment.
+
+**Example 2:**
+> "What song got you into the Beatles"
+
+Source: [What song got you into the Beatles](https://www.reddit.com/r/TheBeatles/comments/1uzmbyi/what_song_got_you_into_the_beatles/)
+
+This asks a question without stating the writer's own opinion.
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `explained_opinion` and `stated_opinion`.
 
 **The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+
+An explained opinion must include a specific detail that explains why the writer holds that opinion. Words like "best," "amazing," "beautiful," and "terrible" express feelings but are not enough by themselves. Using "because" does not automatically make an opinion explained.
+
+Mentioning an instrument, vocal part, date, or song title is also not enough unless it supports the judgment. A specific personal memory counts when the writer explains how it affects their opinion.
+
+I check for the writer's own opinion first. If there is none, I choose `other`. If there is an opinion, I check for a supporting explanation. A question can still contain an opinion, and a post with several opinions counts as `explained_opinion` if at least one is specifically supported.
+
+### Real borderline post
+
+Source: [“The Hollies have a very Beatlesque sound.”](https://www.reddit.com/r/TheBeatles/comments/1w7lmgh/the_hollies_have_a_very_beatlesque_sound/)
+
+This post was difficult to place between `explained_opinion` and `stated_opinion`. The writer finds a recording interesting and mentions the sound of a 12-string Rickenbacker, but does not explain what about that sound makes it interesting.
+
+Under my decision rule, I classify it as `stated_opinion`. Naming an instrument alone is not enough; the detail needs to explain the judgment.
+
+### AI Boundary Stress Test
+
+ChatGPT generated eight fictional posts to test the boundaries of my labels. These practice posts are not part of my real dataset.
+
+My choices matched the rules on five of the eight examples. The three differences helped me clarify that:
+
+- Criticism counts as an opinion, just like praise.
+- A question such as "Who else thinks..." can express the writer's own opinion.
+- Adding a fact or question does not cancel an opinion elsewhere in the post.
+
+I updated my decision rules to cover these cases.
 
 ---
 
