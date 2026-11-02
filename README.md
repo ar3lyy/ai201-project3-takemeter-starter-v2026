@@ -42,8 +42,6 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
-
-
 ---
 
 ## Label Taxonomy
@@ -82,8 +80,6 @@
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
 
-
-
 ---
 
 ## The Dataset
@@ -111,25 +107,25 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> **The post:**
 >
-> *Could have been:*
+> **Could have been:**
 >
-> *I chose, because:*
+> **I chose, because:**
 
 **2.**
-> *The post:*
+> **The post:**
 >
-> *Could have been:*
+> **Could have been:**
 >
-> *I chose, because:*
+> **I chose, because:**
 
 **3.**
-> *The post:*
+> **The post:**
 >
-> *Could have been:*
+> **Could have been:**
 >
-> *I chose, because:*
+> **I chose, because:**
 
 ---
 
@@ -147,8 +143,6 @@ Say so plainly — the disclosure is required, not penalised. -->
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
 
-
-
 ---
 
 ## How I Used AI
@@ -162,15 +156,15 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- **What I asked for:**
+- **What came back:**
+- **What I changed:**
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- **What I asked for:**
+- **What came back:**
+- **What I changed:**
 
 **Pre-labelling disclosure:**
 
@@ -201,8 +195,6 @@ of next unit's variance. -->
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
 
-
-
 ---
 
 ## Run Log — Before
@@ -225,16 +217,14 @@ of next unit's variance. -->
 
 | true \ predicted |  |  |  |
 |---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
-
-
 
 ---
 
@@ -261,8 +251,6 @@ of next unit's variance. -->
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
-
-
 
 ---
 
@@ -297,26 +285,24 @@ of next unit's variance. -->
      what you did across your own 200. -->
 
 **1.**
-> *The post:*
+> **The post:**
 >
-> *Staff said / I said:*
+> **Staff said / I said:**
 >
-> *My call, and why:*
+> **My call, and why:**
 >
-> *Which pile:*
+> **Which pile:**
 
 **2.**
-> *The post:*
+> **The post:**
 >
-> *Staff said / I said:*
+> **Staff said / I said:**
 >
-> *My call, and why:*
+> **My call, and why:**
 >
-> *Which pile:*
+> **Which pile:**
 
 **What the pattern in my disagreements tells me:**
-
-
 
 ---
 
@@ -341,21 +327,15 @@ of next unit's variance. -->
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
 
-
-
 ---
 
 ## What's Still Broken
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
-
-
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
-
-
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
@@ -391,9 +371,7 @@ learned:**
      Do not delete and recreate this repository.
      ═════════════════════════════════════════════════════════════════════ -->
 
-
-
-     ## Milestone 1: Community Reading
+## Milestone 1: Community Reading
 
 ### Community I Chose
 
