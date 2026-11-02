@@ -304,8 +304,10 @@ ChatGPT also helped draft README wording, explain evaluation measures, and draft
 | F1 — `label_two` |  |  |  |
 
 **What I predicted before I looked:**
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
+I predict the baseline will perform better than my trained
+model because it can use my detailed label definitions directly,
+including the rules I clarified during labeling. My trained
+model had only 139 training examples to learn those distinctions.
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
