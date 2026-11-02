@@ -24,8 +24,11 @@ Decision rules:
 4. If there is an opinion without that support, choose stated_opinion.
 5. General praise or criticism, such as "amazing," "beautiful,"
    "the best," or "terrible," is not a supporting explanation.
-6. Mentioning vocals, instruments, or lyrics is not enough by itself.
-   The writer must explain what about them supports the opinion.
+6. Naming an instrument alone is not enough. Identifying a
+   particular part or something the instrument does—such as an
+   opening guitar riff, a drum fill, or a bubbling sound—counts
+   as support when the writer connects it to their opinion.
+   A technical explanation is not required.
 7. A fact must help explain the opinion. An unrelated date or
    song title does not make an opinion explained.
 8. Starting with a question does not automatically make a post other.

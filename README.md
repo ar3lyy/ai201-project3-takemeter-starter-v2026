@@ -42,15 +42,19 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
+TakeMeter is a text classifier for public posts from r/TheBeatles on Reddit. It sorts posts into three categories: explained opinions, stated opinions, and other posts, such as questions or factual statements without the writer's own opinion. I chose this community because I wanted to work with music and noticed that fans express their appreciation in different ways. The classifier focuses on whether writers support their opinions, not whether their opinions are correct or whether I agree with them.
+
 ---
 
 ## Label Taxonomy
 
 These labels describe how writers express their opinions, not whether their opinions are correct or whether I agree with them. I read the title and body together.
 
+The quoted examples below are excerpts where a post is longer. Each source link leads to the full post.
+
 ### `explained_opinion`
 
-**Definition:** The writer expresses an opinion about the Beatles or their music and supports it with a specific feature, example, or personal experience that explains the opinion.
+**Definition:** The writer expresses an opinion about the Beatles or their music and supports it with a specific musical part, feature, example, or personal experience connected to that opinion.
 
 **Example 1:**
 > "Their early records may not be as adventurous and impressive as the studio work that followed, but there's much more happening than 'jingle rock and roll.' You can already hear sophisticated vocal arrangements, tight ensemble playing, and an impressive ability to transform American rock & roll, R&B, Motown, and pop standards into something distinctly their own."
@@ -68,7 +72,7 @@ The writer explains their praise by connecting the song's musical structure to w
 
 ### `stated_opinion`
 
-**Definition:** The writer expresses an opinion about the Beatles or their music without giving a specific supporting explanation.
+**Definition:** The writer expresses an opinion about the Beatles or their music without giving a specific supporting detail or explanation.
 
 **Example 1:**
 > "I like the Beatles"
@@ -110,19 +114,23 @@ This asks a question without stating the writer's own opinion.
 
 **The decision rule I used every time:**
 
-An explained opinion must include a specific detail that explains why the writer holds that opinion. Words like "best," "amazing," "beautiful," and "terrible" express feelings but are not enough by themselves. Using "because" does not automatically make an opinion explained.
+An explained opinion must include a specific detail connected to the writer's judgment. Words like "best," "amazing," "beautiful," and "terrible" express feelings but are not enough by themselves. Using "because" does not automatically make an opinion explained.
 
-Mentioning an instrument, vocal part, date, or song title is also not enough unless it supports the judgment. A specific personal memory counts when the writer explains how it affects their opinion.
+Naming an instrument alone is not enough. However, identifying a particular musical part or something the instrument does, such as an opening guitar riff, a drum fill, or a bubbling sound, counts as support when the writer connects it to their preference. A technical explanation of how the music works is not required.
 
-I check for the writer's own opinion first. If there is none, I choose `other`. If there is an opinion, I check for a supporting explanation. A question can still contain an opinion, and a post with several opinions counts as `explained_opinion` if at least one is specifically supported.
+A date or song title does not count as support just because it appears beside an opinion. A specific personal memory counts when the writer connects that experience to their feelings about the music.
+
+I check for the writer's own opinion first. If there is none, I choose `other`. If there is an opinion, I check for a supporting detail. A question can still contain an opinion, and a post with several opinions counts as `explained_opinion` if at least one is specifically supported.
+
+Criticism counts as an opinion, just like praise. For example, calling a song too long expresses a judgment even if the writer never says "I dislike it."
 
 ### Real borderline post
 
 Source: [“The Hollies have a very Beatlesque sound.”](https://www.reddit.com/r/TheBeatles/comments/1w7lmgh/the_hollies_have_a_very_beatlesque_sound/)
 
-This post was difficult to place between `explained_opinion` and `stated_opinion`. The writer finds a recording interesting and mentions the sound of a 12-string Rickenbacker, but does not explain what about that sound makes it interesting.
+This post was difficult to place between `explained_opinion` and `stated_opinion`. The writer finds a recording interesting and mentions the sound of a 12-string Rickenbacker, but does not identify a particular riff, passage, or action that makes the sound interesting.
 
-Under my decision rule, I classify it as `stated_opinion`. Naming an instrument alone is not enough; the detail needs to explain the judgment.
+Under my decision rule, I classify it as `stated_opinion`. Naming the instrument and generally mentioning its sound is different from pointing to a particular musical part the writer appreciates.
 
 ### AI Boundary Stress Test
 
@@ -136,6 +144,8 @@ My choices matched the rules on five of the eight examples. The three difference
 
 I updated my decision rules to cover these cases.
 
+During dataset review, I also clarified that identifying a particular musical part, such as a guitar riff, can support an opinion without requiring a technical explanation.
+
 ---
 
 ## The Dataset
@@ -145,43 +155,71 @@ I updated my decision rules to cover these cases.
 
 **Where the posts came from:**
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
+My dataset contains 200 unique public posts from r/TheBeatles on Reddit. Each example includes the post title and any collected body text. The dataset includes discussions about songs, albums, performances, band history, and fans' experiences.
+
+ChatGPT helped collect the posts through accessible public pages after Reddit blocked attempts to download posts in a batch. Source links are recorded in the `note` column. The examples are kept in one CSV rather than being manually split into training and test files.
+
+My working file is named `beatles_labels_reviewed.csv`. The notebook will need to use that filename, or the file can be copied to `labels.csv` to match the starter's default.
+
+**How I labelled them:**
+
+<!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
+
+I labeled the first 20 posts independently without AI help. ChatGPT pre-labeled the remaining 180 posts using the label definitions. I read each post, reviewed the suggested labels, and corrected the ones I disagreed with.
+
+The notes identify the first 20 examples as `cold` and the remaining examples as `AI-prelabeled`, with `reviewed` recording my later review. I also revised one of my initial cold labels during review, and its original label is recorded in the notes.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| explained_opinion | 47 | 23.5% |
+| stated_opinion | 72 | 36% |
+| other | 81 | 40.5% |
+| **Total** | **200** | **100%** |
+
+No label accounts for more than 70% of the dataset. The largest category is `other` at 40.5%.
 
 **Three hard cases**
 
 <!-- Any post that made you pause: what it was, which two labels it could have
      been, and what you chose. These are worth more than the easy 190. -->
 
+These three examples are cases where my reviewed label differed from the AI's suggested label.
+
 **1.**
-> **The post:**
+> **The post:** “Mono vs stereo?”
 >
-> **Could have been:**
+> The writer compared mono and stereo versions of several tracks, said they did not hear much difference, and asked why other people prefer mono.
 >
-> **I chose, because:**
+> **Could have been:** `other` or `stated_opinion`.
+>
+> **I chose, because:** `stated_opinion`. Although the post mainly asks a question, the writer also gives their own assessment of the recordings. They do not identify particular similarities or differences in the sound, so I did not count it as an explained opinion.
+
+Source: [Mono vs stereo?](https://www.reddit.com/r/TheBeatles/comments/1w57ijs/mono_vs_stereo/)
 
 **2.**
-> **The post:**
+> **The post:** “Does anyone know what that bubble sounding sound in It Is 'He' (Jai Sri Krishna)?”
 >
-> **Could have been:**
+> The writer says the song is probably their favorite because of its instruments, then asks about a particular instrument that makes a bubbling sound.
 >
-> **I chose, because:**
+> **Could have been:** `stated_opinion` or `explained_opinion`.
+>
+> **I chose, because:** `explained_opinion`. The writer does more than name an instrument. They identify a distinctive sound and connect the instrumentation to their preference. The question at the end does not cancel the opinion.
+
+Source: [The bubbling sound in “It Is 'He'”](https://www.reddit.com/r/TheBeatles/comments/1vthent/does_anyone_know_what_that_bubble_sounding_sound/)
 
 **3.**
-> **The post:**
+> **The post:** “What’s your favorite Beatles song that doesn’t get much love or recognition?”
 >
-> **Could have been:**
+> The writer praises “What You’re Doing” and points to its opening drum part and guitar riff.
 >
-> **I chose, because:**
+> **Could have been:** `stated_opinion` or `explained_opinion`.
+>
+> **I chose, because:** `explained_opinion`. The opening drum part and guitar riff are particular musical parts, rather than just instrument names. The writer identifies those parts as things they appreciate, which is enough support under my clarified rule.
+
+Source: [A favorite song that gets less recognition](https://www.reddit.com/r/TheBeatles/comments/1qly1fl/whats_your_favorite_beatles_song_that_doesnt_get/)
 
 ---
 
@@ -189,15 +227,31 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
+Training has not been completed yet. The setup checks passed, and the notebook's first setup cell ran successfully.
+
 **Base model:**
+
+<!-- Fill in the model used by the notebook when training is configured. -->
 
 **Settings:** <!-- epochs, learning rate, batch size, seed -->
 
+<!-- Fill in the actual settings used for the completed run. -->
+
 **Anything I changed from the defaults, and why:**
+
+<!-- Fill in after configuring and completing training. -->
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
+
+<!-- Record the actual split sizes printed by the notebook. -->
+
+**Device confirmed during setup:** `mps` — Apple Silicon GPU (MPS).
+
+**PyTorch version confirmed during setup:** `2.15.0`.
+
+<!-- Confirm these against the completed run and results.json. -->
 
 ---
 
@@ -212,17 +266,21 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- **What I asked for:**
-- **What came back:**
-- **What I changed:**
+- **What I asked for:** Help turning the differences I noticed in Beatles discussions into clear label definitions.
+- **What came back:** ChatGPT suggested labels for explained opinions, stated opinions, and other posts. It also generated eight fictional examples to test the boundaries.
+- **What I changed:** I clarified that words like "best" and "amazing" express feelings without necessarily explaining them. Later, I clarified that identifying a particular musical part, such as an opening guitar riff, can support an opinion without a technical explanation.
 
 **Moment 2**
 
-- **What I asked for:**
-- **What came back:**
-- **What I changed:**
+- **What I asked for:** Help collecting public posts and organizing them into a CSV, followed by pre-labeling the posts after my first 20 independent examples.
+- **What came back:** ChatGPT collected posts, retained source links, and suggested labels for 180 examples.
+- **What I changed:** I reviewed every example and changed labels I disagreed with. For example, I changed the post about the opening drum part and guitar riff in “What You’re Doing” to `explained_opinion`.
 
 **Pre-labelling disclosure:**
+
+I independently labeled the first 20 posts without AI assistance. ChatGPT pre-labeled the remaining 180 posts, and I read and reviewed every one. The CSV notes preserve that labeling history. I also revised one of my first 20 labels during the later review.
+
+ChatGPT also helped draft README wording, explain evaluation measures, and draft acceptance criteria. I selected the 75% accuracy target and the 70% maximum label-share target; ChatGPT suggested the other three targets.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
@@ -391,6 +449,7 @@ of next unit's variance. -->
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
+
 <!-- Two sentences. Your confusion matrix is the evidence. -->
 
 <!-- ═════════════════════════════════════════════════════════════════════
@@ -449,6 +508,8 @@ I chose r/TheBeatles on Reddit as my public community. I wanted to work with mus
 I am most interested in whether people explain their opinions or simply state them. While discussing this distinction, I noticed that words like “best” and “amazing” express appreciation but do not explain what makes the music good.
 
 My starting idea is that an explained opinion needs a specific reason connected to the music. Just mentioning an instrument or saying the vocals are amazing would not automatically count as an explanation. I still need to test this distinction and decide how to handle posts that mainly ask questions or share facts.
+
+**Later clarification:** After testing the labels and reviewing the dataset, I decided that identifying a particular musical part, such as a guitar riff or an opening drum part, can count as support when connected to the writer's opinion. Simply naming an instrument is still not enough.
 
 ---
 
