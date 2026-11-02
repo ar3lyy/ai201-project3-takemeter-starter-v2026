@@ -391,6 +391,31 @@ learned:**
      Do not delete and recreate this repository.
      ═════════════════════════════════════════════════════════════════════ -->
 
+
+
+     ## Milestone 1: Community Reading
+
+### Community I Chose
+
+I chose r/TheBeatles on Reddit as my public community. I wanted to work with music, and this community has discussions about the Beatles’ songs, albums, performances, and fans’ experiences. I read 30 posts to see what differences appeared in the way people discussed the band.
+
+### Three Differences I Noticed
+
+1. **Asking questions versus sharing opinions.**
+   Some posts invite other fans to answer a question, such as which album introduced them to the Beatles. Other posts mainly share what the writer thinks about a song, album, or the band.
+
+2. **Personal preferences versus factual claims.**
+   Some writers describe their own tastes, such as their favorite song. Others make claims about the band’s history or recordings that someone could check. A preference does not have one correct answer, while a factual claim can be checked even if it turns out to be wrong.
+
+3. **Explaining opinions versus simply stating them.**
+   Some writers explain their opinions by discussing things like the instruments, vocals, lyrics, or how songs fit together. Others say they love something or call it the best without giving a specific reason.
+
+### The Difference I Want to Explore
+
+I am most interested in whether people explain their opinions or simply state them. While discussing this distinction, I noticed that words like “best” and “amazing” express appreciation but do not explain what makes the music good.
+
+My starting idea is that an explained opinion needs a specific reason connected to the music. Just mentioning an instrument or saying the vocals are amazing would not automatically count as an explanation. I still need to test this distinction and decide how to handle posts that mainly ask questions or share facts.
+
 ---
 
 📖 **How to run this project: [RUNNING.md](RUNNING.md)**
