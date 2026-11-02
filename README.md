@@ -298,10 +298,12 @@ ChatGPT also helped draft README wording, explain evaluation measures, and draft
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.400 | 0.367 | -0.033 |
+| Macro F1 | 0.399 | 0.231 | -0.168 |
+| F1 — `explained_opinion` | 0.625 | 0.000 | -0.625 |
+| F1 — `other` | 0.111 | 0.588 | +0.477 |
+| F1 — `stated_opinion` | 0.462 | 0.105 | -0.356 |
+
 
 **What I predicted before I looked:**
 I predict the baseline will perform better than my trained
@@ -310,9 +312,15 @@ including the rules I clarified during labeling. My trained
 model had only 139 training examples to learn those distinctions.
 
 **What the gap actually means:**
-<!-- If the baseline matched your trained model, your fine-tuning added
-     nothing — and that is a real finding, not a failure. Say it plainly. -->
+The baseline correctly classified 12 of the 30 test posts,
+compared with 11 for my trained model. Its accuracy was
+3.3 percentage points higher, and its macro F1 was also higher.
 
+The baseline performed better on explained_opinion and
+stated_opinion, while my trained model performed better on
+other. Fine-tuning did not improve overall performance on
+this split. The confusion matrix and three-seed runs will
+help me investigate this pattern.
 ---
 
 ## Run Log — Before

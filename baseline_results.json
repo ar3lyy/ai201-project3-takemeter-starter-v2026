@@ -1,0 +1,184 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 30,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 30,
+    "accuracy": 0.4,
+    "f1_macro": 0.39921652421652426,
+    "per_label": {
+      "explained_opinion": {
+        "precision": 0.5555555555555556,
+        "recall": 0.7142857142857143,
+        "f1": 0.6250000000000001,
+        "support": 7
+      },
+      "other": {
+        "precision": 0.16666666666666666,
+        "recall": 0.08333333333333333,
+        "f1": 0.1111111111111111,
+        "support": 12
+      },
+      "stated_opinion": {
+        "precision": 0.4,
+        "recall": 0.5454545454545454,
+        "f1": 0.4615384615384615,
+        "support": 11
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "What interesting facts or anecdotes about the Beatles should I know?\n\n*Republics, please delete the previous post because the image I used was apparently AI-generated.",
+      "gold": "other",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "What moment in their songs make you feel like you're in outworld?\n\nStrawberry fields forever (take 4). The guitar outro in combo with mellotron just makes it feel so unusual. Something between heaven and outworld. Like I got teleported to a different dimension, that I don't understand and feels like a dream. At same time you still feel like you're at peace.\nSometimes I wish Strawberry fields forever still had an ending with guitar. The final song does feel like it has more ambitious and experimental ending, but this guitar and mellotron combo feels more atmospheric and peaceful to me. So yeah, the ending part is kinda hard question for me.",
+      "gold": "explained_opinion",
+      "predicted": "other"
+    },
+    {
+      "text": "Mono vs stereo?\n\nI've never really looked into the mono versions. I've noticed a lot of people prefer the mono mix here, so I decided to listen to Please Please Me in mono. I compared the mono and stereo versions of a few tracks. I didn't hear a huge difference really. What about the other albums? Why do people prefer the mono?",
+      "gold": "stated_opinion",
+      "predicted": "explained_opinion"
+    },
+    {
+      "text": "What song got you into the Beatles",
+      "gold": "other",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "What's your favorite Beatles album? Mine is Magical Mystery Tour \u0ed2\ua4b0\u0f80\u0f72 \u02f6\u2022 u \u2022\u02f6 \u0f80\u0f72\u09e7",
+      "gold": "stated_opinion",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "Which song is considered The Beatles greatest masterpiece?\n\nI noticed a lot of people have mixed opinions on this which is understandable since there are so many great songs to choose from but what is your take on this?\n\nMaybe to make it a little bit easier, what is your top 3?",
+      "gold": "stated_opinion",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "Best use of The Beatles in TV or movies\n\nI know for a long time- hearing a Beatles song in a tv show or movie was rare. I want to hear what your favorite is.\n\nPersonally- Ferris Bueller\u2019s Day Off Twist And Shout is my all time favorite.\n\nWhat\u2019s yours?",
+      "gold": "stated_opinion",
+      "predicted": "other"
+    },
+    {
+      "text": "What Are Your Top 5 Beatles Music Videos?\nMy personal top 5 are:\n\n  1. Strawberry Fields Forever (perfect blend of music and video)\n\n  2. A Day In The Life (the best musically)\n\n  3. I Am The Walrus (the most fun)\n\n  4. Hey Bulldog (the coolest)\n\n  5. Blue Jay Way (incredible video, very artistic)",
+      "gold": "stated_opinion",
+      "predicted": "other"
+    },
+    {
+      "text": "Best closer of the entire Beatles discography?",
+      "gold": "other",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "Just got into the Beatles a month ago and...\n\n...WOW why have I not been listening to them my entire life like this has been life-changing\n\nI think the only song I knew of theirs prior to starting this journey was \"While My Guitar Gently Weeps\" and I checked that out after seeing that it was sampled in another song I really liked, and I found to really enjoy it\nI then started with A Hard Day's Night, followed by Abbey Road(you could imagine the whiplash). Just off those 2, I've come to *really* enjoy what they had to offer. Since then I've listened to all of their albums from Please Please Me up to Revolver just about 36 hours ago\n\nI'm so blown away by the sheer quality of their music. I'm so eager to listening to the remaining 5 albums that I've yet to listen to. Literally their music is all I've been listening to for the past month LMAO",
+      "gold": "stated_opinion",
+      "predicted": "other"
+    },
+    {
+      "text": "Have you ever seen any of the Fab four in concert?",
+      "gold": "other",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "What if Capitol Records continued to release their own versions of Beatles albums after Yesterday and Today?\n\n1967\n\nSgt. Pepper's Lonely Hearts Club Band\n\nSide A\n\n  1. Sgt. Pepper's Lonely Hearts Club Band\n\n  2. With A Little Help From My Friends\n\n  3. Getting Better\n\n  4. Fixing a Hole\n\n  5. She's Leaving Home\n\n  6. Being for the Benefit of Mr. Kite\n\nSide B\n\n  1. Within You, Without You\n\n  2. When I'm Sixty Four\n\n  3. Good Morning, Good Morning\n\n  4. Sgt. Pepper's Lonely Hearts Club Band (Reprise)\n  5. A Day in the Life\n\nMagical Mystery Tour\n\nSide A\n\n  1. Magical Mystery Tour\n\n  2. The Fool on the Hill\n\n  3. Flying\n\n  4. Blue Jay Way\n\n  5. Your Mother Should Know\n\n  6. I Am the Walrus\n\nSide B\n\n  1. Hello, Goodbye\n\n  2. Lucy in the Sky With Diamonds\n\n  3. Lovely Rita\n\n  4. Baby, You're a Rich Man\n\n  5. All You Need is Love\n\n1968\n\nA Doll's House\n\nSide A\n\n  1. Dear Prudence\n\n  2. The Continuing Story of Bungalow Bill\n\n  3. Blackbird\n\n  4. Piggies\n\n  5. I Will\n\n  6. Julia\n\nSide B\n  1. Mother Nature's Son\n\n  2. Sexy Sadie\n\n  3. Long, Long, Long\n\n  4. Revolution 1\n\n  5. Cry Baby Cry\n\nThe Beatles\n\nSide A\n\n  1. Back in the USSR\n\n  2. Glass Onion\n\n  3. Ob-La-Di, Ob-La-Da\n\n  4. Wild Honey Pie\n\n  5. While My Guitar Gently Weeps\n\n  6. Happiness is a Warm Gun\n\nSide B\n\n  1. Martha My Dear\n\n  2. I'm So Tired\n\n  3. Rocky Raccoon\n\n  4. Why Don't We Do it in the Road?\n\n  5. Don't Pass Me By\n\n1969\n\nBeatles '69\n\nSide A\n\n  1. Birthday\n\n  2. Yer Blues\n  3. Everybody's Got Something To Hide Except Me and My Monkey\n\n  4. Helter Skelter\n\n  5. Savoy Truffle\n\n  6. Honey Pie\n\nSide B\n\n  1. Hey Bulldog\n\n  2. Only a Northern Song\n\n  3. All Together Now\n\n  4. It's All Too Much\n\n  5. Across The Universe\n\nAbbey Road\n\nSide A\n\n  1. Come Together\n\n  2. Something\n\n  3. Oh Darling\n\n  4. Octopus's Garden\n\n  5. I Want You (She's So Heavy)\n\n  6. Here Comes The Sun\n\n  7. Because\n\nSide B\n\n  1. You Never Give Me Your Money\n\n  2. Sun King\n\n  3. Mean Mr. Mustard\n  4. Polythene Pam\n\n  5. She Came in Through The Bathroom Window\n\n  6. Golden Slumbers\n\n  7. The End\n\n1970\n\nLet it Be\n\n  1. Two of Us\n\n  2. Dig A Pony\n\n  3. I Me Mine\n\n  4. Dig it\n\n  5. Let it Be\n\n  6. Maggie Mae\n\nSide B\n\n  1. Maxwell's Silver Hammer\n\n  2. I've Got a Feeling\n\n  3. The Long and Winding Road\n\n  4. For You Blue\n\n  5. Get Back",
+      "gold": "other",
+      "predicted": "explained_opinion"
+    },
+    {
+      "text": "Any OTHER bands have Multiple \"Final\" Songs like the Beatles do?\n\nSo I'm NOT doing the nearly weekly post we see as to what constitutes \"The Final Beatles Song\"\n\nIt's been done and we know all the contenders \"I Want You (She's so Heavy)\", \"The End\", \"I Me Mine\", \"The Long & Winding Road\", \"Real Love\" & \"Now And Then\"\nInstead I want to bring to light the fact this is such a Consistant topic is due to how people view the band dynamics, what makes something \"A beatles Song\", What was the last one recorded? Finished? did it have all 4 members? did it have all 4 at once? is it after their canonical years? if it was recorded earlier, did it release later? etc etc etc\n\nIt comes from how much people love the band and how unpredictably up and down their story actually was that it becomes interpretational to everyone\nmy question is...Do any other bands have multiple songs listed as their \"final\" song that leaves the answer to Consistant debates or is this unique to the fab 4?",
+      "gold": "explained_opinion",
+      "predicted": "explained_opinion"
+    },
+    {
+      "text": "Thoughts/ feelings/ opinions on, \u201cGood Night\u201d, the final track off of the White Album? (1968)\n\nIn my opinion, I think it\u2019s an absolutely BEAUTIFUL piece of lullaby/ soft themed music. Truly relaxing and beautiful strings/ flutes/ and Ringo\u2019s vocal delivery are just perfect right after the insane avant garde and musique concrete experimental madness of, \u201cRevolution 9\u201d. The song even unintentionally has an emotional weight to it as well.\nA honest (10/10) in my humble opinion. The song does what it does PERFECTLY, and just so dang great as well. \ud83d\udc4d\u2764\ufe0f",
+      "gold": "explained_opinion",
+      "predicted": "explained_opinion"
+    },
+    {
+      "text": "Hot Take: The Beatles are actually a good band",
+      "gold": "stated_opinion",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "Help with a project\n\nHello everyone,I am very new to this entire fandom but I thought of doing a theme related to The Beatles for my highschool ending project, I thought of writing about the influence their music had on the political state of The UK and all of the info/advice/references anyone has would be of great help, thank you so much!",
+      "gold": "other",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "What\u2019s your favorite Beatles song that doesn\u2019t get much love or recognition?\n\nI love the song \u201cWhat You\u2019re Doing\u201d from Beatles For Sale. I can listen to it over and over again, love the opening drum thing and the guitar riff and the lyrics and vocals are good too but it\u2019s not a song that gets a lot of recognition as far as I\u2019m concerned and a casual fan probably doesn\u2019t even know the song. Good song though. What\u2019s yours?",
+      "gold": "explained_opinion",
+      "predicted": "other"
+    },
+    {
+      "text": "Random facts about the beatles?\ud83d\ude2d\n\nLike I want to know the most RANDOM thing about the beatles",
+      "gold": "other",
+      "predicted": "explained_opinion"
+    },
+    {
+      "text": "Mixing important compositions with different genres\n\nWe\u2019ve seen what happens when you mix rock and roll with the nutcracker (Beatles albums)\n\nWe\u2019ve seen what happens when you mix pop and disco with the nutcracker (Thriller)\n\nWhat would it be like if you mixed rap with it? I guess dr Dre 2001 is the answer but still",
+      "gold": "other",
+      "predicted": "other"
+    },
+    {
+      "text": "I cant be the only one who becomes incredibly melancholic while listening to \"Yellow Submarine\"\n\nYellow submarine has always been one of my favorite songs by the beatles, but it always makes me feel so darn sad. Does this also happen to anyone else?",
+      "gold": "stated_opinion",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "Any Opinions on Yoko ono",
+      "gold": "other",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "Did Paul ever write a song specifically for another Beatle to sing?\n\nFor example, John wrote Daytripper but Paul sang lead. John also wrote Good Night for Ringo to sing. Did Paul ever do the same?",
+      "gold": "other",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "What are your top 10 John, Paul, and George songs?\n\nThis top 10 for each of these guys could include songs from both their time with The Beatles and from their solo careers. List away!",
+      "gold": "other",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "What did everyone think of The Beatles Anthology 2025?\nI think it\u2019s a fantastic update to an amazing documentary series. The remastering was gorgeous and I was impressed that more of the original pacing made it into this version than not. Some parts were improved, though I missed some anecdotes and I won\u2019t be selling my DVD version because it\u2019s a different edit. I think that the episodes now end on more logical closure points and the ninth episode was something thay was sorely lacking before.\nI always thought it was weird how the TV and DVD cuts never talked about the Anthology project itself. This version obviously took some cues from The Beatles: Get Back and from the making of Now and Then video on YouTube. I do wish they\u2019d have touched on Now and Then or had some interviews with Paul and Ringo now, but maybe that wasn\u2019t necessary.",
+      "gold": "explained_opinion",
+      "predicted": "explained_opinion"
+    },
+    {
+      "text": "Strawberry Fields Forever imagine hearing this in 67 it must've been absolutely amazing.",
+      "gold": "stated_opinion",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "Just curious, any Beatles fans ever had their parents play any of the Beatles softer/ more relaxing songs during nighttime right before bed time?\n\n\u201cGood Night\u201d from the White Album would be the most obviously of song choices, but other soft songs like, \u201cBlackbird\u201d and their all time timeless classic, \u201cYesterday\u201d also come into my mind.\n\nJust curious, thanks. \ud83d\ude0a",
+      "gold": "other",
+      "predicted": "stated_opinion"
+    },
+    {
+      "text": "Hot take: The Beatles break up in 1970 was the best thing that ever happened to their legacy\n\nIt hurts me as a hardcore Beatles fan to say this, but I think the reason why The Beatles is commonly referred to as the greatest band ever is because they broke up at essentially their creative peak, coming off the back of five of the greatest albums ever to be made (Rubber Soul, Revolver, Sgt. Pepper, The White Album, and their final recorded album Abbey Road) so they really left off on a high note. Their break up is the reason why they have the legacy they do now.\nIf they kept going into the 70s and 80s and started potentially releasing a bunch of mid/trash albums, that would've definitely diluted their legacy and discography. The Beatles would likely not have the same amount of acclaim as they do today 60 years later if they just kept releasing music as a band together well past 1970, and their legacy would've instead been tainted like The Beach Boys for example.\nThe Beach Boys (RIP Brian Wilson) obviously creatively peaked with Pet Sounds and SMiLE, I think almost everyone can agree with that. Pet Sounds and SMiLE arguably were competing with the Beatles's classic Rubber Soul-Abbey Road run. However, I still think The Beach Boys for the most part (with the exception of 20/20) were continuing to consistently put out good and innovative music/albums for several more years after the collapse of SMiLE. Their 1967-1971 period is very underrated if you ask me.\nHowever, after their Surf's Up album in 1971, The Beach Boys's music really fell off quality wise. Most of The Beach Boys's albums after 1971 were absolute trash to me (Holland and Love You were fine, but everything else though...). This is in large part why many people these days view The Beach Boys as a corny nostalgia band, even though they really did also have their own legendary 1965-1971 (Beach Boys Today!-Surf's Up) run of truly amazing music.\nThis thankfully never happened to The Beatles, as The Beatles never got to that state of being so creatively burnt out as they broke up before that would inevitably happen.\nWhat do you guys think?",
+      "gold": "explained_opinion",
+      "predicted": "explained_opinion"
+    },
+    {
+      "text": "If you could have the Beatles cover any album (past or present) in full, what would you pick and why?\n\nMy shout would be Rubber Soul era covering the Stone Roses\u2019 debut.",
+      "gold": "stated_opinion",
+      "predicted": "explained_opinion"
+    },
+    {
+      "text": "Had he Lived longer, how do you think Lennon would have viewed the Standardisation of \"Magical Mystery Tour\" in '87 or \"Let it Be Naked\" '03\n\nHis comments on the 1967 capitol LP are always cited for either perspective \"It was never an album, it became an album over here\" or \"One of my Favourite Albums because it was so weird\"\nbut what do people think his stance would have been in 1987 when it definitively became Apple Canon going forward for the CD & Digital Releases?\n\nAs well as \"Let it Be Naked\" in 03, George Approved of the projects development prior to his passing but in Johns view, Spector saved what was basically a collection of unorganised rehearsals for a conceptually dead on arrival project (in his view) so how would he have seen a stripped back auto-tuned, Re-tracklisted re-edit?\nIn both cases he would had to have seen it as revisionism from McCartney to position him as the creative spearhead leader of the band within pop-culture by marking MMT as a \"Major Project\" of the bands history and also releasing a version of \"Get Back\" that suited HIS initial vision for the project\n\ndo we think by 1987/2003 he would have just not cared and took the paycheck or would he have seen it as poor form and pointless of Paul to keep going backwards?",
+      "gold": "explained_opinion",
+      "predicted": "explained_opinion"
+    },
+    {
+      "text": "Fun to play The Beatles songs\n\nI\u2019ve been having a blast trying to learn all of Paul\u2019s bass parts. Currently obsessing on \u201cYou Won\u2019t See Me\u201d. What\u2019s your favorite Beatles tune to play as a musician?",
+      "gold": "stated_opinion",
+      "predicted": "stated_opinion"
+    }
+  ]
+}
