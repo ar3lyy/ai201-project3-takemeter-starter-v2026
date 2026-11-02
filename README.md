@@ -371,27 +371,56 @@ the cause.
 
 ## Verdicts and Diagnoses
 
-<!-- MET or MISSED against LAST UNIT's target. The target has to hold across
-     all three seeds, not turn up sometimes. -->
+### Independent consistency check — Criterion 4
+
+I independently relabeled my first 20 cold examples using my
+written definitions. I matched 19 of my 20 original labels
+(95%), exceeding my target of 80%.
+
+The disagreement was “Just got into the Beatles a month ago
+and...” My original label was stated_opinion, while my second
+pass was explained_opinion. The boundary is whether describing
+a listening journey explains the positive opinion or only
+provides background alongside general praise.
+
+Against the current reviewed dataset, agreement was 18/20.
+The additional difference was “How did you get into the
+beatles,” which I originally labeled explained_opinion and
+later revised to stated_opinion. My second pass returned to
+the original label.
+
+This suggests that personal background versus supporting
+personal experience remains a boundary worth checking.
+The result meets my consistency target, but it does not
+prove that every label in the full dataset is consistent.
+
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | At least 75% for every seed | MISSED | Accuracy was 36.7%, 60%, and 60%. |
+| 2 | Dataset balance | No label above 70% | MET | The largest label was other at 40.5%. |
+| 3 | Per-label F1 | Every label at least 0.60 for every seed | MISSED | explained_opinion F1 was 0.000, 0.000, and 0.400. |
+| 4 | Independent relabeling consistency | At least 16/20 original cold labels match | MET | My second pass matched 19/20 original cold labels, or 95%. |
+| 5 | explained_opinion recall | At least 0.70 for every seed | MISSED | Seed 42 identified none of the seven explained_opinion posts, giving recall of 0%. |
 
 **Diagnoses**
+The accuracy, per-label F1, and explained_opinion recall targets
+were missed. In seed 42, the model never predicted
+explained_opinion and classified 10 stated_opinion posts as
+other. This shows difficulty recognizing opinions and their
+support, although it does not establish the cause.
 
-<!-- For each miss: the cause, and how you know. The four common causes are:
-     too few examples for a label, a boundary you applied inconsistently, a
-     genuinely hard label pair, and a task the model can't reach from this
-     much data.
+The staff agreement check matched 30/30, but those labels were
+AI-assisted, so that result cannot establish my independent
+consistency. My separate blind check matched 19/20 original
+cold labels. The remaining disagreement suggests some
+uncertainty about when personal background supports an opinion.
 
-     ⚠️ Use your agreement report as evidence. It is the only instrument you
-     have that can tell a LABELLING problem from a MODEL problem, and this
-     section is graded on whether you used it that way. -->
+explained_opinion was also the smallest category, with 47 posts
+overall and 33 training examples in seed 42. Limited examples
+and only three training epochs are possible contributors to
+its weak performance. More training is a hypothesis to test,
+not a confirmed solution.
 
 ---
 ## Agreement Report
