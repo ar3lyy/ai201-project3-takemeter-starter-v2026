@@ -467,34 +467,79 @@ of my model's errors.
 **What the pattern in my disagreements tells me:**
 
 ---
-
 ## The Improvement
 
 **What I changed:**
 
+I increased training from three epochs to five. I kept the
+dataset, seeds, learning rate, batch size, and input length
+unchanged.
+
 **Which diagnosis pointed at it:**
+
+The model struggled to recognize explained opinions, including
+predicting none in seed 42. I tested whether more training
+would help it learn the distinctions. This was a possible
+cause, not something the earlier results had proved.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| Overall accuracy | At least 0.75 | 0.467 | 0.600 | 0.533 | MISSED |
+| Largest dataset label share | At most 70% | 40.5% | 40.5% | 40.5% | MET |
+| Every label's F1 | At least 0.60 | Minimum 0.273 | Minimum 0.250 | Minimum 0.333 | MISSED |
+| Independent cold-label agreement | At least 80% | 95% overall | Same check | Same check | MET |
+| explained_opinion recall | At least 0.70 | 0.286 | — | — | MISSED |
+
+Dataset balance and independent agreement are checks on the
+dataset and labeling process, rather than separate seed results.
+Recall for seed 42 was 2/7, which is enough to establish that
+the across-all-seeds recall target was missed.
+
+### After-run confusion matrix — seed 42
+
+| true \ predicted | explained_opinion | stated_opinion | other |
+|---|---|---|---|
+| explained_opinion | 2 | 5 | 0 |
+| stated_opinion | 1 | 3 | 7 |
+| other | 0 | 3 | 9 |
+
+The largest error was seven stated_opinion posts classified
+as other, compared with three errors in the reverse direction.
+This decreased from ten versus two before the change. The
+model also correctly identified two explained opinions,
+compared with none before.
 
 **Did it help, and how do I know:**
 
-<!-- If it didn't, say so. Relabelling that didn't help is a genuinely
-     interesting result and earns full credit. -->
+The results were mixed. Accuracy changed from 36.7% to 46.7%
+for seed 42, stayed at 60% for seed 7, and fell from 60% to
+53.3% for seed 2024. Macro F1 improved for the first two seeds
+but declined for the third.
 
+Accuracy spread decreased from 23.3 to 13.3 percentage points,
+but performance still varied across seeds. Five epochs helped
+some runs without meeting any additional acceptance criteria.
 ---
 
 ## What's Still Broken
+Accuracy, per-label F1, and explained_opinion recall still
+missed my targets. Next, I would collect more varied explained
+opinions and review the boundary between personal background
+and a personal experience that supports an opinion.
 
-<!-- For each criterion still missed: what you'd do, and why you stopped. -->
+I stopped after this controlled experiment because it completed
+the required improvement attempt. Further changes would need
+separate comparisons.
 
+**The gap between what I meant my labels to capture and what
+the model learned:**
+
+I wanted the model to distinguish supported opinions,
+unsupported opinions, and posts without an opinion. In the
+after-run seed 42 matrix, it still classified five explained
+opinions as stated opinions and seven stated opinions as other.
 **The gap between what I meant my labels to capture and what the model
 learned:**
 

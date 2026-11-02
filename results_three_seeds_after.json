@@ -1,0 +1,164 @@
+[
+  {
+    "seed": 42,
+    "n_test": 30,
+    "accuracy": 0.4666666666666667,
+    "f1_macro": 0.43852813852813854,
+    "per_label": {
+      "explained_opinion": {
+        "precision": 0.6666666666666666,
+        "recall": 0.2857142857142857,
+        "f1": 0.4,
+        "support": 7
+      },
+      "stated_opinion": {
+        "precision": 0.2727272727272727,
+        "recall": 0.2727272727272727,
+        "f1": 0.2727272727272727,
+        "support": 11
+      },
+      "other": {
+        "precision": 0.5625,
+        "recall": 0.75,
+        "f1": 0.6428571428571429,
+        "support": 12
+      }
+    },
+    "confusion": {
+      "explained_opinion": {
+        "explained_opinion": 2,
+        "stated_opinion": 5,
+        "other": 0
+      },
+      "stated_opinion": {
+        "explained_opinion": 1,
+        "stated_opinion": 3,
+        "other": 7
+      },
+      "other": {
+        "explained_opinion": 0,
+        "stated_opinion": 3,
+        "other": 9
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.49536198377609253,
+      "mean_when_wrong": 0.4217241108417511,
+      "accuracy_most_confident_third": 0.8,
+      "accuracy_least_confident_third": 0.4,
+      "n_per_third": 10
+    },
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.15.0",
+    "max_length": 128
+  },
+  {
+    "seed": 7,
+    "n_test": 30,
+    "accuracy": 0.6,
+    "f1_macro": 0.5238095238095238,
+    "per_label": {
+      "explained_opinion": {
+        "precision": 1.0,
+        "recall": 0.14285714285714285,
+        "f1": 0.25,
+        "support": 7
+      },
+      "stated_opinion": {
+        "precision": 0.47058823529411764,
+        "recall": 0.7272727272727273,
+        "f1": 0.5714285714285714,
+        "support": 11
+      },
+      "other": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "support": 12
+      }
+    },
+    "confusion": {
+      "explained_opinion": {
+        "explained_opinion": 1,
+        "stated_opinion": 6,
+        "other": 0
+      },
+      "stated_opinion": {
+        "explained_opinion": 0,
+        "stated_opinion": 8,
+        "other": 3
+      },
+      "other": {
+        "explained_opinion": 0,
+        "stated_opinion": 3,
+        "other": 9
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.45317140221595764,
+      "mean_when_wrong": 0.3855295181274414,
+      "accuracy_most_confident_third": 0.9,
+      "accuracy_least_confident_third": 0.3,
+      "n_per_third": 10
+    },
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.15.0",
+    "max_length": 128
+  },
+  {
+    "seed": 2024,
+    "n_test": 30,
+    "accuracy": 0.5333333333333333,
+    "f1_macro": 0.5027195027195027,
+    "per_label": {
+      "explained_opinion": {
+        "precision": 0.4,
+        "recall": 0.2857142857142857,
+        "f1": 0.3333333333333333,
+        "support": 7
+      },
+      "stated_opinion": {
+        "precision": 0.4666666666666667,
+        "recall": 0.6363636363636364,
+        "f1": 0.5384615384615384,
+        "support": 11
+      },
+      "other": {
+        "precision": 0.7,
+        "recall": 0.5833333333333334,
+        "f1": 0.6363636363636364,
+        "support": 12
+      }
+    },
+    "confusion": {
+      "explained_opinion": {
+        "explained_opinion": 2,
+        "stated_opinion": 4,
+        "other": 1
+      },
+      "stated_opinion": {
+        "explained_opinion": 2,
+        "stated_opinion": 7,
+        "other": 2
+      },
+      "other": {
+        "explained_opinion": 1,
+        "stated_opinion": 4,
+        "other": 7
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.4500458240509033,
+      "mean_when_wrong": 0.4146338105201721,
+      "accuracy_most_confident_third": 0.8,
+      "accuracy_least_confident_third": 0.3,
+      "n_per_third": 10
+    },
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.15.0",
+    "max_length": 128
+  }
+]
