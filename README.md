@@ -394,36 +394,28 @@ the cause.
      section is graded on whether you used it that way. -->
 
 ---
-
 ## Agreement Report
 
-<!-- Your rate against the staff set, and every disagreement adjudicated.
+**Agreement rate:** 30 / 30 = 100%
 
-     Remember you labelled these 30 under the STAFF taxonomy in
-     data/staff_taxonomy.md, not your own — so every argument below is made
-     from those definitions and those decision rules. -->
+**How the labels were produced:**
 
-**Agreement rate:** ___ / 30 = ___%
+ChatGPT suggested labels for all 30 staff posts, which I used
+in my_staff_labels.csv. This was an AI-assisted pass rather
+than an independent labeling check.
 
-<!-- Nobody grades this number. A 60% who argues every disagreement from the
-     stated rules beats a 95% who wrote "staff was right" nine times. Several
-     of the 30 were chosen because they're genuinely ambiguous — you should be
-     winning some of these. -->
+**Disagreements:**
 
-**Disagreements**
+There were no disagreements with the staff key, so there
+were no cases to sort into piles (a), (b), or (c).
 
-<!-- Three lines each: the post, both labels, and who you think is right and
-     why — grounded in the staff definitions you were both applying.
+**What the result tells me:**
 
-     Then sort each into one of three piles:
-       (a) the rule covered it and I applied it loosely → a consistency problem
-       (b) the rule genuinely doesn't say               → a gap in the definitions
-       (c) the rule is ambiguous here and my reading is defensible → argue it.
-           This is a legitimate win.
-
-     Pile (a) is the one that matters most for your diagnosis: if you applied a
-     written rule two different ways on 30 posts, that is direct evidence about
-     what you did across your own 200. -->
+The suggested labels matched the staff labels on this set.
+However, this result does not establish that I independently
+applied the rules consistently across my own Beatles dataset.
+I cannot use it to rule out labeling inconsistency as a cause
+of my model's errors.
 
 **1.**
 > **The post:**
