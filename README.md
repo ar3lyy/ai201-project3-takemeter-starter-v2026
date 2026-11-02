@@ -325,28 +325,43 @@ help me investigate this pattern.
 
 ## Run Log — Before
 
-<!-- Five criteria across three seeds. The notebook's section 6 prints the
-     spread table; the Target and Verdict columns are yours. -->
+### Three-seed results
 
-| Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.367 | 0.600 | 0.600 | 0.233 |
+| Macro F1 | 0.231 | 0.462 | 0.562 | 0.331 |
+| F1 — explained_opinion | 0.000 | 0.000 | 0.400 | 0.400 |
+| F1 — stated_opinion | 0.105 | 0.625 | 0.621 | 0.520 |
+| F1 — other | 0.588 | 0.762 | 0.667 | 0.174 |
+
+Accuracy ranged from 36.7% to 60%, a spread of 23.3 percentage
+points. Performance is sensitive to the seed, which changes
+both the split and training randomness. One run is not a
+reliable summary of this model's performance.
+
+All three runs used the Apple Silicon GPU (`mps`).
 
 ### Confusion matrix
 
-<!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
-     An image of a matrix earns nothing. -->
+This matrix is from seed 42. Rows are true labels; columns
+are the model's predictions.
 
-| true \ predicted |  |  |  |
+| true \ predicted | explained_opinion | stated_opinion | other |
 |---|---|---|---|
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| **explained_opinion** | 0 | 5 | 2 |
+| **stated_opinion** | 0 | 1 | 10 |
+| **other** | 0 | 2 | 10 |
 
+**My biggest off-diagonal number, and what it means:**
+
+The model classified 10 real stated_opinion posts as other,
+while only two real other posts were classified as
+stated_opinion. On this seed, it leaned toward other on that
+boundary. It also never predicted explained_opinion.
+The agreement check will help investigate whether inconsistent
+labeling contributed; the matrix alone does not establish
+the cause.
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
