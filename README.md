@@ -227,31 +227,40 @@ Source: [A favorite song that gets less recognition](https://www.reddit.com/r/Th
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-Training has not been completed yet. The setup checks passed, and the notebook's first setup cell ran successfully.
+**Base model:** `distilbert-base-uncased`
 
-**Base model:**
+**Settings:**
 
-<!-- Fill in the model used by the notebook when training is configured. -->
-
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
-
-<!-- Fill in the actual settings used for the completed run. -->
+- Epochs: 3
+- Learning rate: 0.00002
+- Batch size: 16
+- Maximum input length: 128 tokens
+- Seed: 42
+- Device: `mps` — Apple Silicon GPU
+- PyTorch version: 2.15.0
 
 **Anything I changed from the defaults, and why:**
 
-<!-- Fill in after configuring and completing training. -->
+I kept the default training settings for this first run. I
+changed the label map to match my three categories and set the
+CSV path to `beatles_labels_reviewed.csv`.
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes:**
 
-<!-- Record the actual split sizes printed by the notebook. -->
+| Label | Train | Validation | Test |
+|---|---|---|---|
+| explained_opinion | 33 | 7 | 7 |
+| stated_opinion | 50 | 11 | 11 |
+| other | 56 | 13 | 12 |
+| **Total** | **139** | **31** | **30** |
 
-**Device confirmed during setup:** `mps` — Apple Silicon GPU (MPS).
+The notebook created a stratified split. The explained_opinion
+label has only seven test examples, so its evaluation scores
+may vary noticeably between seeds.
 
-**PyTorch version confirmed during setup:** `2.15.0`.
-
-<!-- Confirm these against the completed run and results.json. -->
+Training completed for all three epochs. Section 5 evaluated
+the held-out test set and saved `results.json` and
+`test_split.csv`.
 
 ---
 
@@ -264,13 +273,6 @@ of next unit's variance. -->
      workflow and disclosing it costs you nothing. Not disclosing it is the
      problem. -->
 
-**Moment 1**
-
-- **What I asked for:** Help turning the differences I noticed in Beatles discussions into clear label definitions.
-- **What came back:** ChatGPT suggested labels for explained opinions, stated opinions, and other posts. It also generated eight fictional examples to test the boundaries.
-- **What I changed:** I clarified that words like "best" and "amazing" express feelings without necessarily explaining them. Later, I clarified that identifying a particular musical part, such as an opening guitar riff, can support an opinion without a technical explanation.
-
-**Moment 2**
 
 - **What I asked for:** Help collecting public posts and organizing them into a CSV, followed by pre-labeling the posts after my first 20 independent examples.
 - **What came back:** ChatGPT collected posts, retained source links, and suggested labels for 180 examples.
